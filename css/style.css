@@ -27,14 +27,14 @@ main {
   justify-content: space-around;
 }
 
-.left {
+.check {
   width: 52rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.right {
+.status {
   width: 52rem;
   font-size: 2rem;
 }
@@ -97,7 +97,7 @@ main {
   left: 2rem;
 }
 
-.left__guess {
+.check__guess {
   background: none;
   border: 4px solid #eee;
   font-family: inherit;
@@ -124,13 +124,13 @@ main {
   background-color: #ccc;
 }
 
-.right__message {
+.status__message {
   margin-bottom: 5rem;
   height: 3rem;
 }
 
-.right__label-score,
-.right__label-highscore {
+.status__label-score,
+.status__label-highscore {
   margin-bottom: 2rem;
 }
 
