@@ -57,7 +57,7 @@ document.querySelector(".button__again").addEventListener("click", function () {
   document.querySelector(".check__guess").value = "";
 });
 
-// Add Enter to input
+// Enter event to input
 input.addEventListener("keypress", function (press) {
   if (press.key === "Enter") {
     document.querySelector(".button__check").click();
@@ -74,7 +74,20 @@ btnOpenModal.addEventListener("click", function () {
   overlay.classList.remove("hidden");
 });
 
-overlay.addEventListener("click", function () {
+const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+};
+
+overlay.addEventListener("click", closeModal);
+
+// Escape event to modal
+document.addEventListener("keydown", function (event) {
+  console.log(event.key);
+
+  if (event.key === "Escape") {
+    if (!modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  }
 });
