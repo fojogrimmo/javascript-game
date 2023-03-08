@@ -25,7 +25,7 @@ document.querySelector(".button__check").addEventListener("click", function () {
     displayMessage("Correct number!");
     document.querySelector(".header__number").textContent = secretNumber;
     document.querySelector(".header__number").style.width = "35rem";
-    document.querySelector("body").style.backgroundColor = "#2e1f49";
+    document.querySelector("body").style.backgroundColor = "#af649f";
 
     // Upadate highscore
     if (score > highscore) {
@@ -51,7 +51,7 @@ document.querySelector(".button__again").addEventListener("click", function () {
   secretNumber = Math.trunc(Math.random() * 100) + 1;
   document.querySelector(".score").textContent = score;
   displayMessage("Start guessing...");
-  document.querySelector("body").style.backgroundColor = "#a66297";
+  document.querySelector("body").style.backgroundColor = "#a85797";
   document.querySelector(".header__number").style.width = "20rem";
   document.querySelector(".header__number").textContent = "?";
   document.querySelector(".check__guess").value = "";
@@ -61,5 +61,19 @@ document.querySelector(".button__again").addEventListener("click", function () {
 input.addEventListener("keypress", function (press) {
   if (press.key === "Enter") {
     document.querySelector(".button__check").click();
+  }
+});
+
+// Close & open instruction
+const btnOpen = document.querySelector(".btn-open");
+const info = document.querySelector(".header__info");
+
+btnOpen.addEventListener("click", function () {
+  if (info.classList.contains("hidden")) {
+    info.classList.remove("hidden");
+    btnOpen.textContent = "Close";
+  } else {
+    info.classList.add("hidden");
+    btnOpen.textContent = "How to play it?";
   }
 });
