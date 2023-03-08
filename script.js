@@ -64,16 +64,17 @@ input.addEventListener("keypress", function (press) {
   }
 });
 
-// Close & open instruction
-const btnOpen = document.querySelector(".btn-open");
-const info = document.querySelector(".header__info");
+// Modal info
+const modal = document.querySelector(".header__about");
+const overlay = document.querySelector(".overlay");
+const btnOpenModal = document.querySelector(".header__instruction");
 
-btnOpen.addEventListener("click", function () {
-  if (info.classList.contains("hidden")) {
-    info.classList.remove("hidden");
-    btnOpen.textContent = "Close";
-  } else {
-    info.classList.add("hidden");
-    btnOpen.textContent = "How to play it?";
-  }
+btnOpenModal.addEventListener("click", function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+});
+
+overlay.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
 });

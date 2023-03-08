@@ -109,13 +109,6 @@ main {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.header__aside {
-  display: flex;
-  align-content: flex-end;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
 
 .header__instruction {
   font-size: 1.7rem;
@@ -127,16 +120,32 @@ main {
   color: #ccc;
 }
 
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
 .header__info {
+  position: fixed;
   font-size: 1.7rem;
   line-height: 160%;
-  width: 100%;
-  margin-top: 50px;
-  margin-right: 13px;
+  width: 49%;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   text-align: center;
   padding: 15px 20px;
   border: 3px solid #fff;
   background-color: #e985b0;
+  z-index: 10;
 }
 
 .button__again {
@@ -188,7 +197,13 @@ main {
 }
 
 .footer__copyright a {
-  color: #ffc4df;
+  color: #fff;
   font-size: medium;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer__copyright a:hover {
+  transition: 0.3s;
+  color: #ffc4df;
 }
