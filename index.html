@@ -12,39 +12,66 @@
     <title>CatGuess</title>
   </head>
   <body>
-    <header class="header">
-      <h1 class="header__title">Guess My Magic Age!</h1>
-      <div class="header__images">
-        <img
-          src="img/kitty_1.png"
-          alt="Cute cat drawing"
-          class="header__image"
-        />
-      </div>
-      <p class="header__between">(Between 1 and 100)</p>
-      <p class="header__instruction">How to play it?</p>
-      <button class="btn button__again">Again!</button>
-      <div class="header__number">?</div>
-    </header>
-    <main class="main">
-      <section class="check">
-        <input type="number" class="check__guess" />
-        <button class="btn button__check">Check!</button>
-      </section>
-      <section class="status">
-        <p class="status__message">Start guessing...</p>
-        <p class="status__label-score">Score: <span class="score">10</span></p>
-        <p class="status__label-highscore">
-          Highscore: <span class="highscore">0</span>
-        </p>
-        <p class="status__total-attempts">
-          Total attempts: <span class="attempts">0</span>
-        </p>
-      </section>
-    </main>
-    <footer class="footer">
-      <h2 class="copyright">made by fojogrimmo</h2>
-    </footer>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__information-section">
+            <button class="btn button__again">Again!</button>
+            <div class="header__help">
+              <p class="header__between">(Between 1 and 100)</p>
+              <p class="header__instruction btn-open">How to play it?</p>
+            </div>
+            <aside class="header__aside">
+              <div class="header__about">
+                <p class="header__info hidden">
+                  You need to type the age of the magic cat. Usually, this
+                  number is about 1 to 100. But, if you lucky, you can try to
+                  guess it quickly — who knows...✨
+                </p>
+              </div>
+            </aside>
+          </div>
+
+          <div class="header__initial">
+            <div class="header__images">
+              <img
+                src="img/kitty_1.png"
+                alt="Cute cat drawing"
+                class="header__image"
+              />
+            </div>
+            <h1 class="header__title">Guess My Magic Age!</h1>
+            <div class="header__number">?</div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="check">
+          <input type="number" class="check__guess" />
+          <button class="btn button__check">Check!</button>
+        </section>
+        <section class="status">
+          <p class="status__message">Start guessing...</p>
+          <p class="status__label-score">
+            Score: <span class="score">10</span>
+          </p>
+          <p class="status__label-highscore">
+            Highscore: <span class="highscore">0</span>
+          </p>
+          <p class="status__total-attempts">
+            Total attempts: <span class="attempts">0</span>
+          </p>
+        </section>
+      </main>
+      <footer class="footer">
+        <h2 class="footer__copyright">
+          made by
+          <a href="https://github.com/fojogrimmo " target="_blank">
+            fojogrimmo
+          </a>
+        </h2>
+      </footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
