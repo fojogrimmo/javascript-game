@@ -49,6 +49,7 @@ document.querySelector(".button__check").addEventListener("click", function () {
 document.querySelector(".button__again").addEventListener("click", function () {
   score = 10;
   secretNumber = Math.trunc(Math.random() * 100) + 1;
+  attempts = 0;
   document.querySelector(".score").textContent = score;
   displayMessage("Start guessing...");
   document.querySelector("body").style.backgroundColor = "#a85797";
