@@ -1,9 +1,9 @@
 "use strict";
 
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
-let score = 10;
+let tries = 10;
 let highscore = 0;
-let attempts = 0;
+let total = 0;
 let input = document.querySelector(".check__guess");
 
 const displayMessage = function (message) {
@@ -13,8 +13,9 @@ const displayMessage = function (message) {
 document.querySelector(".button__check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".check__guess").value);
   // Upadate attemps
-  attempts++;
-  document.querySelector(".attempts").textContent = attempts;
+  total++;
+  document.querySelector(".total").textContent = total;
+  input.value = "";
 
   // When there is no input
   if (!guess) {
@@ -28,29 +29,29 @@ document.querySelector(".button__check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#7db184";
 
     // Upadate highscore
-    if (score > highscore) {
-      highscore = score;
+    if (tries > highscore) {
+      highscore = tries;
       document.querySelector(".highscore").textContent = highscore;
     }
     // When guess is wrong
   } else if (guess !== secretNumber) {
-    if (score > 1) {
+    if (tries > 1) {
       displayMessage(guess > secretNumber ? "Too high!" : "Too low!");
-      score--;
-      document.querySelector(".score").textContent = score;
+      tries--;
+      document.querySelector(".tries").textContent = tries;
     } else {
       displayMessage("You lost the game... Kitty won!");
-      document.querySelector(".score").textContent = 0;
+      document.querySelector(".tries").textContent = 0;
     }
   }
 });
 
 // Again Button
 document.querySelector(".button__again").addEventListener("click", function () {
-  score = 10;
+  tries = 10;
   secretNumber = Math.trunc(Math.random() * 100) + 1;
   attempts = 0;
-  document.querySelector(".score").textContent = score;
+  document.querySelector(".tries").textContent = tries;
   displayMessage("Start guessing...");
   document.querySelector("body").style.backgroundColor = "#a85797";
   document.querySelector(".header__number").style.width = "20rem";
@@ -90,3 +91,8 @@ document.addEventListener("keydown", function (event) {
     closeModal();
   }
 });
+
+// Clear input field
+function clearInput() {
+  document.getElementById("form").reset();
+}
