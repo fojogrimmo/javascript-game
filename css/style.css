@@ -186,7 +186,7 @@ main {
 }
 
 .status__label-score,
-.status__label-highscore {
+.status__total-attempts {
   margin-bottom: 2rem;
 }
 
