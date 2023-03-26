@@ -185,8 +185,8 @@ main {
   height: 3rem;
 }
 
-.status__label-score,
-.status__total-attempts {
+.status__label-tries,
+.status__total-tries {
   margin-bottom: 2rem;
 }
 
