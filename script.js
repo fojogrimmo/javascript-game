@@ -25,7 +25,7 @@ document.querySelector(".button__check").addEventListener("click", function () {
     displayMessage("Correct number!");
     document.querySelector(".header__number").textContent = secretNumber;
     document.querySelector(".header__number").style.width = "35rem";
-    document.querySelector("body").style.backgroundColor = "#af649f";
+    document.querySelector("body").style.backgroundColor = "#7db184";
 
     // Upadate highscore
     if (score > highscore) {
