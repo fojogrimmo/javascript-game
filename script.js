@@ -11,11 +11,11 @@ const displayMessage = function (message) {
 };
 
 document.querySelector(".button__check").addEventListener("click", function () {
-  const guess = Number(document.querySelector(".check__guess").value);
+  const guess = Number(input.value);
   // Upadate attemps
   total++;
   document.querySelector(".total").textContent = total;
-  input.value = "";
+  clearInput();
 
   // When there is no input
   if (!guess) {
@@ -50,13 +50,13 @@ document.querySelector(".button__check").addEventListener("click", function () {
 document.querySelector(".button__again").addEventListener("click", function () {
   tries = 10;
   secretNumber = Math.trunc(Math.random() * 100) + 1;
-  attempts = 0;
+  total = 0;
   document.querySelector(".tries").textContent = tries;
   displayMessage("Start guessing...");
   document.querySelector("body").style.backgroundColor = "#a85797";
   document.querySelector(".header__number").style.width = "20rem";
   document.querySelector(".header__number").textContent = "?";
-  document.querySelector(".check__guess").value = "";
+  clearInput();
 });
 
 // Enter event to input
@@ -93,6 +93,6 @@ document.addEventListener("keydown", function (event) {
 });
 
 // Clear input field
-function clearInput() {
-  document.getElementById("form").reset();
-}
+const clearInput = function () {
+  input.value = "";
+};
