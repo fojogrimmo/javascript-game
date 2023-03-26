@@ -1,10 +1,11 @@
 "use strict";
 
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
-let tries = 10;
+let tries = 15;
 let highscore = 0;
 let total = 0;
 let input = document.querySelector(".check__guess");
+let number = document.querySelector(".header__number");
 
 const displayMessage = function (message) {
   document.querySelector(".status__message").textContent = message;
@@ -24,8 +25,8 @@ document.querySelector(".button__check").addEventListener("click", function () {
     // When player wins
   } else if (guess === secretNumber) {
     displayMessage("Correct number!");
-    document.querySelector(".header__number").textContent = secretNumber;
-    document.querySelector(".header__number").style.width = "35rem";
+    number.textContent = secretNumber;
+    number.style.width = "35rem";
     document.querySelector("body").style.backgroundColor = "#7db184";
 
     // Upadate highscore
@@ -48,14 +49,14 @@ document.querySelector(".button__check").addEventListener("click", function () {
 
 // Again Button
 document.querySelector(".button__again").addEventListener("click", function () {
-  tries = 10;
+  tries = 15;
   secretNumber = Math.trunc(Math.random() * 100) + 1;
   total = 0;
   document.querySelector(".tries").textContent = tries;
   displayMessage("Start guessing...");
   document.querySelector("body").style.backgroundColor = "#a85797";
-  document.querySelector(".header__number").style.width = "20rem";
-  document.querySelector(".header__number").textContent = "?";
+  number.style.width = "20rem";
+  number.textContent = "?";
   clearInput();
 });
 
