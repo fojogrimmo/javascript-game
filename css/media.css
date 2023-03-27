@@ -1,3 +1,13 @@
+@media only screen and (max-width: 1200px) {
+  main {
+    height: 70vh;
+  }
+  .header__number {
+    width: 18rem;
+    padding: 2rem 1rem;
+  }
+}
+
 /*---Medium devices---*/
 @media only screen and (max-width: 768px) {
   html {
