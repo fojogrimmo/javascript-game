@@ -1,6 +1,8 @@
+/*---Desktops---*/
 @media only screen and (max-width: 1200px) {
   main {
     height: 70vh;
+    padding-top: 5rem;
   }
   .header__number {
     width: 18rem;
@@ -8,7 +10,7 @@
   }
 }
 
-/*---Medium devices---*/
+/*---Tablets---*/
 @media only screen and (max-width: 768px) {
   html {
     font-size: 50%;
@@ -32,5 +34,31 @@
   }
   .check__guess {
     width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  main {
+    padding-top: 10rem;
+  }
+  .header__information-section {
+    justify-content: center;
+  }
+  .header__help {
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .header__info {
+    line-height: 150%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 15px;
+  }
+  .header__title {
+    padding: 10px 20px 0px 21px;
+    letter-spacing: 3px;
+    line-height: 100%;
   }
 }
